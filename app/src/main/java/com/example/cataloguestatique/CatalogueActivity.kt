@@ -1,10 +1,11 @@
 
 package com.example.cataloguestatique
 
-import androidx.appcompat.app.AppCompatActivity
+
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class CatalogueActivity : AppCompatActivity() {
 
@@ -12,32 +13,25 @@ class CatalogueActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalogue)
 
-        val btn1 = findViewById<Button>(R.id.btnProduit1)
-        val btn2 = findViewById<Button>(R.id.btnProduit2)
-        val btn3 = findViewById<Button>(R.id.btnProduit3)
+        findViewById<Button>(R.id.btnProduit1)
+            .setOnClickListener {
+                ouvrirOptions("Chaussures")
+            }
 
-        btn1.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Produit 1 ajouté au panier",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+        findViewById<Button>(R.id.btnProduit2)
+            .setOnClickListener {
+                ouvrirOptions("Accessoires")
+            }
 
-        btn2.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Produit 2 ajouté au panier",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+        findViewById<Button>(R.id.btnProduit3)
+            .setOnClickListener {
+                ouvrirOptions("Cosmétiques")
+            }
+    }
 
-        btn3.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Produit 3 ajouté au panier",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
+    private fun ouvrirOptions(categorie: String) {
+        val intent = Intent(this, OptionsActivity::class.java)
+        intent.putExtra("categorie", categorie)
+        startActivity(intent)
     }
 }

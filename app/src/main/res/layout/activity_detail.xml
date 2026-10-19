@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF2F8">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/txtDetailTitre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Détails du produit"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1A5276"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/imgDetail"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerInside"
+            android:contentDescription="Image du produit" />
+
+        <TextView
+            android:id="@+id/txtDetailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="#263238"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/txtDetailPrix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#1A5276"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnRetourCatalogue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retour"
+            android:layout_marginTop="20dp" />
+
+    </LinearLayout>
+</ScrollView>
